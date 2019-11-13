@@ -93,15 +93,3 @@ copyBtn.addEventListener("click", function () {
     /* Alert the copied text */
     alert("Copied the text: " + copyText.value);
 });
-
-
-
-
-
-//var points = [40, 100, 1, 5, 25, 10];
-//document.getElementById("demo").innerHTML = points;  
-
-//function myFunction() {
-  //finalPassword.sort(function(a, b){return 0.5 - Math.random()});
-  //document.getElementById("demo").innerHTML = points;
-//}
