@@ -8,6 +8,7 @@ var specialChar = ["&", "$", "#", "@", "!", "*", "_", "."];
 var numberChar = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var passwordArray = [];
 var finalPassword = [];
+var requiredCount = 0;
 
 var needLower = confirm("Does you password require lowercase letters?");
 var needUpper = confirm("Does you password require uppercase letters?");
@@ -32,33 +33,45 @@ genBtn.addEventListener("click", function () {
         else {
             if (needLower === true) {
                 passwordArray = passwordArray.concat(lowerChar);
+                var randomChar = lowerChar[Math.floor(Math.random() * lowerChar.length)];
+                finalPassword.push(randomChar);
+                requiredCount=requiredCount+1;
             }
             else {
 
             }
             if (needUpper === true) {
                 passwordArray = passwordArray.concat(upperChar);
+                var randomChar = upperChar[Math.floor(Math.random() * upperChar.length)];
+                finalPassword.push(randomChar);
+                requiredCount=requiredCount+1;
             }
             else {
 
             }
             if (needSpecial === true) {
                 passwordArray = passwordArray.concat(specialChar);
+                var randomChar = specialChar[Math.floor(Math.random() * specialChar.length)];
+                finalPassword.push(randomChar);
+                requiredCount=requiredCount+1;
             }
             else {
 
             }
             if (needNumber === true) {
                 passwordArray = passwordArray.concat(numberChar);
+                var randomChar = numberChar[Math.floor(Math.random() * numberChar.length)];
+                finalPassword.push(randomChar);
+                requiredCount=requiredCount+1;
             }
             else {
 
             }
             for (i = 0; i < parseInt(passwordLength); i++) {
-                var randomChar = passwordArray[Math.floor(Math.random() * passwordArray.length)];
+                var randomChar = passwordArray[Math.floor(Math.random() * (passwordArray.length-requiredCount))];
                 finalPassword.push(randomChar);
             }
-
+            finalPassword.sort(function(a, b){return 0.5 - Math.random()});
             textArea.textContent = finalPassword.join("");
 
         }
@@ -89,6 +102,6 @@ copyBtn.addEventListener("click", function () {
 //document.getElementById("demo").innerHTML = points;  
 
 //function myFunction() {
-  //points.sort(function(a, b){return 0.5 - Math.random()});
+  //finalPassword.sort(function(a, b){return 0.5 - Math.random()});
   //document.getElementById("demo").innerHTML = points;
 //}
