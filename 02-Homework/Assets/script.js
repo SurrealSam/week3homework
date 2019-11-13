@@ -7,8 +7,7 @@ var upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var specialChar = ["&", "$", "#", "@", "!", "*", "_", "."];
 var numberChar = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var passwordArray = [];
-var finalPassword = [];
-var requiredCount = 0;
+
 
 var needLower = confirm("Does you password require lowercase letters?");
 var needUpper = confirm("Does you password require uppercase letters?");
@@ -19,7 +18,8 @@ var passwordLength = prompt("How long would you like your password to be? (Pleas
 
 
 genBtn.addEventListener("click", function () {
-
+    var finalPassword = [];
+    var requiredCount = 0;
     if (needLower, needUpper, needSpecial, needNumber === false) {
         alert("Please refresh and select at least one character type")
     }
